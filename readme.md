@@ -1,5 +1,8 @@
 # 一个全局任务驱动的 `Screeps` AI
 
+本项目全局为任务驱动，没有角色驱动。
+其中 `lib/tasks` 为全局任务列表，`lib/controller` 发布任务，`lib/executor` 执行任务。
+
 ## TODO:
 
 - [x] 完善任务分配逻辑，在同一 `tick` 中分配多个 `creep` 执行同一任务
