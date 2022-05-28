@@ -1,0 +1,40 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "es6",
+		"moduleResolution": "Node",
+		"esModuleInterop": true,
+		"strict": true,
+		"alwaysStrict": false,
+		"exactOptionalPropertyTypes": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noImplicitUseStrict": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		// "noUnusedParameters": true,
+		"allowSyntheticDefaultImports": true,
+		"outDir": "dist",
+		"baseUrl": "./src",
+		"sourceMap": true,
+		"incremental": true,
+		"lib": [
+			"ES6",
+		],
+		// "watch": true,
+		"types": [
+			"node",
+			"screeps",
+			"lodash"
+			// "@screepscn/types"
+		]
+	},
+	"compileOnSave": true,
+	"include": [
+		"src"
+	]
+}

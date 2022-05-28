@@ -1,0 +1,10 @@
+/*
+!/src/
+.*
+!.gitignore
+!Gruntfile.js
+!package-lock.json
+!package.json
+!rollup.config.js
+!tsconfig.json
+!readme.md
