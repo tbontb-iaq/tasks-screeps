@@ -152,7 +152,9 @@ export const roomInit = () => {
 	});
 
 	Object.values(Memory.s).forEach((ids) => {
-		ids.forEach((id) => (Memory.structures[id] = { cost: {}, p_task: {} }));
+		ids.forEach(
+			(id) => (Game.getObjectById(id)!.memory = { cost: {}, p_task: {} })
+		);
 	});
 
 	Memory.tasks = {

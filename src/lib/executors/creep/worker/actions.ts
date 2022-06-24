@@ -15,10 +15,14 @@ interface Action<T extends TaskType> {
 }
 
 // https://stackoverflow.com/questions/72385709
-const defineAction = <T extends TaskType, U extends Action<T>>(obj: U): Action<T> => obj;
+const defineAction =
+	<T extends TaskType>(type: T) =>
+		<U extends Action<T>>(obj: U): Action<T> => obj;
 
-const HarvestAction: Action<"harvest"> = defineAction({
-	harvestable(target: HarvestAble | null): boolean { return false; },
+const HarvestAction = defineAction("harvest")({
+	harvestable(target: HarvestAble | null): boolean {
+		return false;
+	},
 	from(creep, task) {
 		const target = o(task.target);
 		return creep.store.getFreeCapacity(task.res) && harvestable(target)

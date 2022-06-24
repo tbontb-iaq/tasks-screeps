@@ -12,8 +12,8 @@ const Cost_Map: Record<BodyPartConstant, number> = {
 };
 
 const Body_Map: Record<Role, BodyPartConstant[]> = {
-	worker: [WORK, CARRY, MOVE, MOVE],
-	carrier: [CARRY, MOVE],
+	worker: [WORK, CARRY, MOVE, MOVE], // 250
+	carrier: [CARRY, MOVE], // 100
 	attacker: [ATTACK, MOVE],
 	r_attacker: [RANGED_ATTACK, MOVE],
 	healer: [HEAL, MOVE],
@@ -21,7 +21,8 @@ const Body_Map: Record<Role, BodyPartConstant[]> = {
 };
 
 const MaxTimes_Map: Partial<Record<Role, number>> = {
-	carrier: 8,
+	// carrier: g.s.extensions.length / 2,
+	carrier: 20,
 };
 
 interface BodyObj {
@@ -41,5 +42,7 @@ function make_body(role: Role): BodyObj {
 const BodyObjMap: Record<Role, BodyObj> = Object.values(Role)
 	.map((role) => ({ [role]: make_body(role) } as { [role in Role]: BodyObj }))
 	.reduce((pre, cur) => ({ ...pre, ...cur }));
+
+console.log(BodyObjMap);
 
 export { BodyObjMap };

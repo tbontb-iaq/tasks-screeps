@@ -7,7 +7,7 @@ interface AssignAble {
 }
 
 abstract class ManagerBase<Task extends TaskBase> {
-	private record: TaskRecord<Task>;
+	protected record: TaskRecord<Task>;
 	protected id_arr: number[];
 	constructor(memory_task: MemoryTask<Task>) {
 		this.record = memory_task.record;
