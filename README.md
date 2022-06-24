@@ -1,18 +1,18 @@
-# 一个全局任务驱动的 `Screeps` AI
+# 一个任务驱动的 `Screeps` AI
 
-本项目全局为任务驱动，而 `creep` 按照角色执行相应的任务。
-其中 `lib/tasks` 为全局任务列表，`lib/controller` 通过它发布任务，`lib/executor` 领取并执行任务。
+本项目全局为任务驱动，`creep` 按照角色执行相应的任务。
+其中 `lib/tasks` 为全局任务列表，`lib/posters` 通过它发布任务，`lib/executors` 领取并执行任务。
 
 ## 它如何工作
 
-我们以 `worker` 为例解释任务驱动的工作方式。`tasks-screeps` 按照身体部件能够完成的动作来进行分类，所以将采集者、升级者、建造者、维修者和拆毁者统一为 `worker` 进行管理。
+我们以 `worker` 为例解释任务驱动的工作方式。`tasks-screeps` 按照身体部件能够完成的动作来进行分类，所以将采集、升级、建造、维修和拆毁统一为 `worker` 进行管理。
 这是一个 `worker` 的行动路线，其中箭头方向为资源的流动方向：
 
 ```mermaid
 flowchart
 center(("center"))
 harvestable[Source, Mineral, Deposit] -->|harvest| center
-center -->|build| Construction_site
+center -->|build| Construction_Site
 center -->|repair| Structure
 Structure -->|dismantle| center
 center -->|upgrade| Controller
@@ -22,7 +22,7 @@ center -->|upgrade| Controller
 
 ## 一切皆任务
 
-`tasks-screeps` 的核心思想是一切皆任务。所以 `tasks-screeps` 中没有 `creeps` 数量控制模块，取而代之的是 `lib/controller/spawn` 模块，它控制着 `spawn` 任务的发布，而 `lib/executor/structure/spawn` 负责执行 `spawn` 任务。它们互不干涉，却共同维持着 `creep` 数量的恒定。
+在 `tasks-screeps` 中是一切皆任务。`tasks-screeps` 中没有 `creeps` 数量控制模块，取而代之的是 `lib/posters/spawn` 模块，它控制着 `spawn` 任务的发布，而 `lib/executors/structure/spawn` 负责执行 `spawn` 任务。它们互不干涉，却共同维持着 `creep` 数量的恒定。
 
 ## 开发须知
 
