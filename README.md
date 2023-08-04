@@ -1,5 +1,13 @@
 # 一个任务驱动的 `Screeps` AI
 
+Code for game Screeps
+
+> [Screeps Offical Websise](https://screeps.com/) [Screeps: World on Steam](https://store.steampowered.com/app/464350/Screeps_World/)
+> 
+> Screeps 是一款 MMORTS （大型多人在线即时战略游戏），和其他 RTS 游戏不同的地方在于，它需要你编写 `Javascript` 代码控制游戏中的单位采集、建造、运输和战斗
+> 
+> 更多详情：https://screeps-cn.github.io/introduction.html
+
 本项目全局为任务驱动，`creep` 按照角色执行相应的任务。
 其中 `lib/tasks` 为全局任务列表，`lib/posters` 通过它发布任务，`lib/executors` 领取并执行任务。
 
